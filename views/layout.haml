@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title #{@title}
+    %link{:rel => "stylesheet", :href => "/application.css", :type => "text/css", :media => "all"}
+  %body
+    .container
+      %header
+        %h1
+          Hip Hippos
+        %h2
+          Prints, Cards and Original Artwork
+        %h3
+          by jessica dear
+        %nav
+          %ul.menu
+            %li
+              =link_to "#", "Story"
+            %li
+              =link_to "#", "Store"
+            %li
+              =link_to "#", "Blog"
+      = yield
+      %footer
+        Copyright &copy; 2012 Brian and Jessica Dear. All Rights Reserved. Any use of the images contained within this site is expressly prohibited without permission.

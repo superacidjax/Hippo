@@ -1,0 +1,65 @@
+@import "mixins"
+
+body
+  font-size: 62.5% //1em = 10px
+  font-family: "Helvetica", sans-serif
+  -webkit-font-smoothing: anti-aliased
+  color: #3f3d32
+  
+  .container
+    width: 90%
+    margin: 40px auto
+
+    header
+      h1
+        padding: 4px
+        +border-radius(5px)
+        background: #fff
+        font-size: 9.6em
+        text-align: left
+        margin-left: 10%
+      h2
+        font-size: 2.4em
+        font-weight: 300
+        margin-right: 40%
+        text-align: right
+      h3
+        font-size: 1.6em
+        font-weight: 300
+        margin-right: 40%
+        text-align: right
+
+      nav
+        float: right
+        position: relative
+        left: -50%
+        text-align: left
+        ul
+          list-style: none
+          position: relative
+          left: 50%
+          padding: 18px
+          li
+            position: relative
+            border: 1px solid #3f3d32
+            margin: 9px 1px 18px 1px
+            padding: 4px
+            +border-radius(7px)
+            font-size: 1.6em
+            float: left
+            width: 100px
+            text-align: center
+            a
+              text-decoration: none
+              margin: 10px
+              color: #3f3d32
+              text-align: center
+              white-space: nowrap
+            a:hover
+
+
+
+    footer
+      margin-top: 72px
+      font-size: 1em
+      text-align: center

@@ -1,0 +1,100 @@
+%head
+  / Include theme
+  %link{:href => "css/jquery-ui-1.8.5.custom.css", :rel => "Stylesheet", :type => "text/css"}/
+  / Include jQuery and UI
+  %script{:src => "js/jquery-1.6.2.min.js", :type => "text/javascript"}
+  %script{:src => "js/jquery-ui-1.8.9.custom.min.js", :type => "text/javascript"}
+  / Include jQuery CoverFlow widget
+  %script{:src => "js/ui.coverflow.js", :type => "text/javascript"}
+  %link{:href => "css/demos.css", :rel => "stylesheet", :type => "text/css"}/
+  / Transformie is a plugin that makes webkit's CSS transforms work in Internet Explorer
+  %script{:src => "js/sylvester.js", :type => "text/javascript"}
+  %script{:src => "js/transformie.js", :type => "text/javascript"}
+  / Include mousewheel dependancies and app files
+  %script{:src => "js/jquery.mousewheel.min.js", :type => "text/javascript"}
+  %script{:src => "js/app.js", :type => "text/javascript"}
+  :javascript
+    $(function(){	
+
+    	
+    	var demo = {
+
+    		yScroll: function(wrapper, scrollable) {
+
+    			var wrapper = $(wrapper), scrollable = $(scrollable),
+    				loading = $('Loading...').appendTo(wrapper),
+    				internal = null,
+    				images	= null;
+    				scrollable.hide();
+    				images = scrollable.find('img');
+    				completed = 0;
+    				
+    				images.each(function(){
+    					if (this.complete) completed++;	
+    				});
+    				
+    				if (completed == images.length){
+    					setTimeout(function(){							
+    						loading.hide();
+    						wrapper.css({overflow: 'hidden'});						
+    						scrollable.slideDown('slow', function(){
+    							enable();	
+    						});					
+    					}, 0);	
+    				}
+    		
+    			
+    			function enable(){
+    				var inactiveMargin = 99,
+    					wrapperWidth = wrapper.width(),
+    					wrapperHeight = wrapper.height(),
+    					scrollableHeight = scrollable.outerHeight() + 2*inactiveMargin,
+    					wrapperOffset = 0,
+    					top = 0,
+    					lastTarget = null;
+
+    				
+    				wrapper.mousemove(function(e){
+    					lastTarget = e.target;
+    					wrapperOffset = wrapper.offset();		
+    					top = (e.pageY -  wrapperOffset.top) * (scrollableHeight - wrapperHeight) / wrapperHeight - inactiveMargin;
+    					if (top < 0){
+    						top = 0;
+    					}			
+    					wrapper.scrollTop(top);
+    				});	
+    			}			
+    		}
+    	}
+
+    	
+    	demo.yScroll('#scroll-pane', 'ul#sortable');
+
+    		
+    });
+%body
+  .pageWrapper
+    .demo
+      .wrapper
+        #coverflow
+          %img{"data-album" => "Come Around Sunshine", "data-artist" => "Kings Of Leon", :src => "img/birthday_01_hippo.png"}/
+          %img{"data-album" => "Born Free", "data-artist" => "Kid Rock", :src => "img/birthday_01_hippo.png"}/
+          %img{"data-album" => "Recovery", "data-artist" => "Eminem", :src => "img/birthday_01_hippo.png"}/
+          %img{"data-album" => "Plastic Beach", "data-artist" => "Gorillaz", :src => "img/4_july_hippo_small.png"}/
+          %img{"data-album" => "Happy Birthday Hippo!", :src => "img/birthday_01_hippo.png"}/
+          %img{"data-album" => "Speak Now", "data-artist" => "Taylor Swift", :src => "img/birthday_01_hippo.png"}/
+          %img{"data-album" => "The Band Perry", "data-artist" => "The Band Perry", :src => "img/birthday_01_hippo.png"}/
+          %img{"data-album" => "Hands All Over", "data-artist" => "Maroon 5", :src => "img/birthday_01_hippo.png"}/
+          %img{"data-album" => "Danger Days", "data-artist" => "My Chemical Romance", :src => "img/birthday_01_hippo.png"}/
+          %img{"data-album" => "The Final Frontier", "data-artist" => "Iron Maiden", :src => "img/birthday_01_hippo.png"}/
+          %img{"data-album" => "Black Label Society", "data-artist" => "Order Of The Black", :src => "birthday_01_hippo.png"}/
+          %img{"data-album" => "Raymond V Raymond", "data-artist" => "Usher", :src => "img/birthday_01_hippo.png"}/
+      #imageCaption
+        Sample Text
+    .demo-description
+      %p Each of these designs are available for purchase as original artwork, prints or cards. Custom designs are also available.
+    .listholder
+      #scroll-pane
+        %ul#sortable
+      #slider-wrap
+        #slider-vertical
