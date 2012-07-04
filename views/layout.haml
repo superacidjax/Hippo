@@ -3,6 +3,8 @@
   %head
     %title #{@title}
     %link{:rel => "stylesheet", :href => "/application.css", :type => "text/css", :media => "all"}
+    %script{:type => "text/javascript",
+        :src  => "js/jquery-1.7.2.min.js"}
   %body
     .container
       %header
@@ -16,17 +18,34 @@
               prints, cards and original artwork
             %h3{style: "Color: #3f3d32"}
               by jessica dear
-        #navbox
-          %nav
-            %ul.menu
-              %li
-                =link_to "http://hip-hippos.myshopify.com", "Store"
-              %li
-                =link_to "#", "Story"
-              %li
-                =link_to "#", "Blog"
-              %li
-                =link_to '#', "Contact"
+      #navbox
+        %nav
+          %ul.menu
+            %li#store
+              =link_to "http://hip-hippos.myshopify.com", "Store"
+            %li
+              =link_to "#", "Story"
+            %li
+              =link_to "#", "Blog"
+            %li#contact
+              =link_to '#', "Contact"
       = yield
+      %contact
+        %h1
+          We'd love to hear from you!
+        %a
+          Twitter
+        %a
+          hippo@hiphippos.me
+        %a
+          +1.555.1212
       %footer
         Copyright &copy; 2012 Brian and Jessica Dear. All Rights Reserved. Any use of the images contained within this site is expressly prohibited without permission.
+  :javascript
+    $(document).ready(function() {
+    $("li#contact").click(function() {
+    $("contact").fadeToggle(100);
+    $("contactsplat").fadeToggle(2000);
+    });
+    });
+
