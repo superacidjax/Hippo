@@ -6,20 +6,26 @@
   %body
     .container
       %header
-        %h1
-          Hip Hippos
-        %h2
-          Prints, Cards and Original Artwork
-        %h3
-          by jessica dear
-        %nav
-          %ul.menu
-            %li
-              =link_to "#", "Story"
-            %li
-              =link_to "#", "Store"
-            %li
-              =link_to "#", "Blog"
+        #header_box
+          %h1{style: "Color: #AF4035"}
+            Hip
+          %h1
+            Hippos
+          %h2
+            prints, cards and original artwork
+          %h3
+            by jessica dear
+        #navbox
+          %nav
+            %ul.menu
+              %li
+                =link_to "#", "Story"
+              %li
+                =link_to "http://hip-hippos.myshopify.com", "Store"
+              %li
+                =link_to "#", "Blog"
+              %li
+                =link_to '#', "Contact"
       = yield
-      %footer
-        Copyright &copy; 2012 Brian and Jessica Dear. All Rights Reserved. Any use of the images contained within this site is expressly prohibited without permission.
+      / %footer
+      /   Copyright &copy; 2012 Brian and Jessica Dear. All Rights Reserved. Any use of the images contained within this site is expressly prohibited without permission.

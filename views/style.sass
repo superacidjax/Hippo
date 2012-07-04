@@ -5,29 +5,84 @@ body
   font-family: "Helvetica", sans-serif
   -webkit-font-smoothing: anti-aliased
   color: #3f3d32
+  background: #F0FFFF
   
   .container
-    width: 90%
+    width: 100%
     margin: 40px auto
 
     header
-      h1
-        padding: 4px
-        +border-radius(5px)
-        background: #fff
-        font-size: 9.6em
-        text-align: left
-        margin-left: 10%
-      h2
-        font-size: 2.4em
-        font-weight: 300
-        margin-right: 40%
-        text-align: right
-      h3
-        font-size: 1.6em
-        font-weight: 300
-        margin-right: 40%
-        text-align: right
+      // +border-radius(5px)
+      // background: #fff
+      // opacity: 0.8
+      width: 100%
+      #header_box
+        float: left
+        padding: 18px
+        +border-top-right-radius(24px)
+        +border-bottom-right-radius(24px)
+        background: #0BB5FF
+        width: 30%
+        opacity: 0.9
+        h1
+          font-size: 960%
+          text-align: right
+          margin-right: 10%
+          opacity: 1.0
+          
+        h2
+          opacity: 1.0
+          padding: 0 10% 0 0
+          font-size: 200%
+          font-weight: 300
+          text-align: right
+        h3
+          opacity: 1.0
+          margin-left: 40%
+          padding: 1% 10% 0 0
+          font-size: 160%
+          text-align: right
+      #navbox
+        height: 45%
+        padding: 9px
+        width: 15%
+        nav
+          margin-left: 45%
+          float: left
+          opacity: 0.8
+          position: relative
+          text-align: right
+          ul
+            padding: 18px
+            li
+              border: 5px groove #3f3d32
+              margin: 15%
+              padding: 4%
+              +border-radius(50%)
+              width: 50px
+              height: 50px
+              background: #fff
+              a
+                opacity: 1.0
+                margin-top: 35%
+                display: block
+                text-decoration: none
+                font-size: 150%
+                text-align: center
+                color: #3f3d32
+                text-align: center
+                white-space: nowrap
+            li:hover
+              border: 5px dotted #0BB5FF
+              background: #F0FFFF
+              opacity: 0.8
+
+
+
+    footer
+      margin-top: 72px
+      font-size: 1em
+      text-align: center
 
       nav
         float: right
@@ -56,10 +111,3 @@ body
               text-align: center
               white-space: nowrap
             a:hover
-
-
-
-    footer
-      margin-top: 72px
-      font-size: 1em
-      text-align: center
