@@ -6,20 +6,23 @@
   %body
     .container
       %header
-        #header_box
-          %h1{style: "Color: #AF4035"}
-            Hip
-          %h1
-            Hippos
-          %h2
-            prints, cards and original artwork
-          %h3
-            by jessica dear
+        %a{:href => "/"}
+          #header_box
+            %h1{style: "Color: #AF4035"}
+              Hip
+            %h1{style: "Color: #3f3d32"}
+              Hippos
+            %h2{style: "Color: #3f3d32"}
+              prints, cards and original artwork
+            %h3{style: "Color: #3f3d32"}
+              by jessica dear
         #navbox
           %nav
             %ul.menu
               %li
                 =link_to "#", "Story"
+              %li
+                %a#gallerynav{:href => "/gallery"} Gallery
               %li
                 =link_to "http://hip-hippos.myshopify.com", "Store"
               %li

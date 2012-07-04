@@ -22,7 +22,17 @@ get '/' do
 	haml :home
 end
 
+get '/gallery' do
+  @title = "Hip Hippo Gallery"
+  haml :gallery
+end
+
 get '/application.css' do
 	headers 'Content-Type' => 'text/css; charset=utf-8'
 	sass :style
+end
+
+get '/home.css' do
+  headers 'Content-Type' => 'text/css; charset=utf-8'
+  sass :home
 end
