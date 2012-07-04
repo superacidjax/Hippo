@@ -5,11 +5,15 @@ body
   font-family: "Helvetica", sans-serif
   -webkit-font-smoothing: anti-aliased
   color: #3f3d32
-  background: #F0FFFF
+  height: 100%
   
   .container
-    width: 100%
-    margin: 40px auto
+    margin: 0 auto -4em
+    min-height: 100%
+    height: auto
+    height: 100%
+    margin-bottom: -330px
+    position: relative
 
     header
       #header_box
@@ -56,11 +60,12 @@ body
               margin: 15%
               padding: 4%
               +border-radius(50%)
-              width: 50px
-              height: 50px
+              width: 7em
+              height: 7em
               background: #fff
               a
                 opacity: 1.0
+                text-transform: uppercase
                 margin-top: 35%
                 display: block
                 text-decoration: none
@@ -69,55 +74,21 @@ body
                 color: #3f3d32
                 text-align: center
                 white-space: nowrap
-              &.active
-                a
-                  position: relative
-                  background: #000
-                  &:after
-                    content: ""
-                    position: absolute
-                    margin-left: -4px
-                    left: 50%
-                    top: 100%
-                    height: 4px
-                    width: 8px
-                    background: red
+              a:hover
+                color: red
             li:hover
               border: 5px dotted #0BB5FF
-              background: #F0FFFF
-              opacity: 0.8
+              background: #EEB422
+              color: red
 
 
 
     footer
-      margin-top: 72px
-      font-size: 1em
+      margin-top: 95%
+      padding: .8em
+      position: fixed
+      font-size: 1.3em
+      background: #fff
       text-align: center
-
-      nav
-        float: right
-        position: relative
-        left: -50%
-        text-align: left
-        ul
-          list-style: none
-          position: relative
-          left: 50%
-          padding: 18px
-          li
-            position: relative
-            border: 1px solid #3f3d32
-            margin: 9px 1px 18px 1px
-            padding: 4px
-            +border-radius(7px)
-            font-size: 1.6em
-            float: left
-            width: 100px
-            text-align: center
-            a
-              text-decoration: none
-              margin: 10px
-              color: #3f3d32
-              text-align: center
-              white-space: nowrap
-            a:hover
+      z-index: 10
+      opacity: 0.8
