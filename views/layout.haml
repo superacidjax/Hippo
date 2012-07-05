@@ -45,10 +45,13 @@
       %contact
         %h1
           We'd love to hear from you!
-        %a
-          =link_to "http://twitter.com/hip_hippos", "Twitter us!"
-        %a{:href => "mailto:jessicadear@me.com"} Email us!
-        %a{:href => "http://hipmommies.tumblr.com"} Read the Hip Mommies Blog
+        %ul
+          %li
+            =link_to "http://twitter.com/hip_hippos", "Twitter us!"
+          %li
+            =link_to "mailto:jessicadear@me.com", "Email us!"
+          %li
+            =link_to "http://hipmommies.tumblr.com", "Hip Mommies Blog!"
       %footer
         Copyright &copy; 2012 Brian and Jessica Dear. All Rights Reserved. Any use of the images contained within this site is expressly prohibited without permission.
   :javascript
@@ -64,4 +67,12 @@
     $("contact").fadeOut();
     });
     });
+    $(document).ready(function() {
+    $("li#store").click(function() {
+    window.location = "http://store.hiphippos.me"
+    });
+    });
+    $('li#store').css( 'cursor', 'pointer' );
+    $('li#story').css( 'cursor', 'pointer' );
+    $('li#contact').css( 'cursor', 'pointer' );
 
