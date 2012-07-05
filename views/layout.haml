@@ -12,7 +12,7 @@
           #header_box
             %h1{style: "Color: #AF4035"}
               Hip
-            %h1{style: "Color: #3f3d32"}
+            %h1
               Hippos
             %h2{style: "Color: #3f3d32"}
               prints, cards and original artwork
@@ -23,29 +23,46 @@
           %ul.menu
             %li#store
               =link_to "http://hip-hippos.myshopify.com", "Store"
-            %li
+            %li#story
               =link_to "#", "Story"
             %li
               =link_to "#", "Blog"
             %li#contact
               =link_to '#', "Contact"
+      %aboutus
+        %h1
+          The
+          %span{style: "Color: #AF4035"}
+            Hip
+          Hippos Story
+        %p
+          Hip Hippos started as an idea for a sequel to our children's book iPad app #{link_to "http://itunes.apple.com/us/app/petey-parrot-flies-outside/id451466274?mt=8", "Petey Parrot Flies Outside"}. The idea was to create a fun character that would entertain little kids while teaching them colors and shapes. Jessica Dear is an experienced kindergarten and 1st grade teacher and had great success teaching her students with animals that the kids made themselves.
+        %p
+          When we built the Petey Parrot app, we used hand-drawing and paper-cut techniques to create a simple, colorful world kids and parents loved. We wanted to continue that tradition with a new character, Hip Hippo. Jessica created the idea of a colorful, friendly hippo enjoying learning and living in a variety of situations we all enjoy.
+        %p
+          Hip Hippos is a collection of artwork that combines hand-painted scenes, paper cuts and other techniques to create fun, happy artwork suitable for the kids room, the living room or your personal art collection. Jessica can also create custom works just for you. For example, the art can be personalized with a name or Jessica can even create customized scenes just for you.
+        %p
+          We sell original 8x10 pieces which are truly one-of-a-kind. We also have silkscreen posters of any of the designs as well as greeting cards (perfect for invitations, thank you notes, announcements or even grandma's birthday!) We will be adding more Hippo merchandise to our store and we're happy to create custom items on request. So visit the store and place your order!
       = yield
       %contact
         %h1
           We'd love to hear from you!
         %a
-          Twitter
-        %a
-          hippo@hiphippos.me
-        %a
-          +1.555.1212
+          =link_to "http://twitter.com/hip_hippos", "Twitter us!"
+        %a{:href => "mailto:jessicadear@me.com"} Email us!
       %footer
         Copyright &copy; 2012 Brian and Jessica Dear. All Rights Reserved. Any use of the images contained within this site is expressly prohibited without permission.
   :javascript
     $(document).ready(function() {
     $("li#contact").click(function() {
     $("contact").fadeToggle(100);
-    $("contactsplat").fadeToggle(2000);
+    $("aboutus").fadeOut();
+    });
+    });
+    $(document).ready(function() {
+    $("li#story").click(function() {
+    $("aboutus").fadeToggle(100);
+    $("contact").fadeOut();
     });
     });
 
